@@ -52,7 +52,7 @@ deployer.clone = function (ssh_url, repo) {
 deployer.do_deploy = function (repo) {
   deployer.emit('start_deploy_script', repo);
   return new Promise((res, rej) => {
-    let deploy = spawn('/bin/sh', ['deploy.sh'], { cwd: '/workers/' + repo });
+    let deploy = spawn('/bin/sh', ['deploy.sh'], { cwd: './workers/' + repo });
     deploy.stdout.on('data', (data) => {
       deployer.emit('data', data.toString().trim());
     });
