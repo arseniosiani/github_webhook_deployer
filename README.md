@@ -17,7 +17,7 @@ mv dist /var/www/my_awesome_app
 
 # Usage
 ```javascript
-const  deployer  =  require('github-webhook-deployer');
+const  deployer  =  require('@arseniosiani/github-webhook-deployer');
 
 deployer.on('start', function(repo_info){
     console.log("Started deploy for "+ repo_info.repository.name);

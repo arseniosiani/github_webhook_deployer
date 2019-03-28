@@ -1,11 +1,19 @@
 {
-  "name": "github-webhook-deployer",
+  "name": "@arseniosiani/github-webhook-deployer",
   "version": "0.0.1",
   "description": "Github webhook deploy helper",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "github",
+    "webhook",
+    "deploy",
+    "nodejs",
+    "node"
+  ],
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arseniosiani/github_webhook_deployer.git"
