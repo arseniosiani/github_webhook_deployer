@@ -11,11 +11,10 @@ app.use(express.json());
 let deployer = new EventEmitter();
 deployer.deploy = function (req, res) {
   let repo = req.body.repository.name;
-  let branch = req.body.repository.default_branch;
   let ssh_url = req.body.repository.ssh_url;
 
   deployer.emit('invoked', req.body);
-  if (branch === 'master') {
+  if (req.body.ref === 'refs/heads/master') {
     deployer.emit('start_deploy', req.body);
 
     rimraf.sync("./workers/" + repo);
@@ -23,7 +22,7 @@ deployer.deploy = function (req, res) {
       .then(() => deployer.clone(ssh_url, repo))
       .then(() => deployer.do_deploy(repo))
       .then(() => deployer.emit('all_done'))
-      .catch((err) => deployer.emit('error', err)) 
+      .catch((err) => deployer.emit('error', err))
     return res.status(200).send("Started Deploy");
   }
   return res.status(200).send("Deploy not needed")

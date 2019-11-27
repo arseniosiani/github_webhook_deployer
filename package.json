@@ -13,7 +13,6 @@
     "nodejs",
     "node"
   ],
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arseniosiani/github_webhook_deployer.git"
@@ -25,7 +24,7 @@
   },
   "homepage": "https://github.com/arseniosiani/github_webhook_deployer#readme",
   "dependencies": {
-    "express": "^4.16.4",
-    "rimraf": "^2.6.3"
+    "express": "^4.17.1",
+    "rimraf": "^2.7.1"
   }
 }
